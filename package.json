@@ -1,0 +1,52 @@
+{
+  "name": "@niht/haunted",
+  "version": "0.0.1",
+  "description": "Experimenting with hauntedjs",
+  "source": "src/haunted-niht.js",
+  "main": "lib/haunted-niht.js",
+  "module": "lib/haunted-niht.mjs",
+  "unpkg": "lib/haunted-niht.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "author": {
+    "name": "Brian Kimball",
+    "email": "bvkimball@gmail.com"
+  },
+  "license": "UNLICENSE",
+  "dependencies": {
+    "@niht/stylis": "^0.0.1",
+    "haunted": "^4.5.2",
+    "lit-html": "^1.1.1"
+  },
+  "devDependencies": {
+    "@niht/chef": "^0.0.4",
+    "ava": "*",
+    "browser-env": "^3.2.6",
+    "eslint-config-rem": "^3.2.0",
+    "xo": "*"
+  },
+  "scripts": {
+    "build": "bake -m",
+    "test": "xo --fix && ava --verbose"
+  },
+  "xo": {
+    "extends": "rem/prettier",
+    "ignores": [
+      "lib/**"
+    ],
+    "prettier": true,
+    "esnext": true,
+    "envs": [
+      "browser"
+    ]
+  },
+  "ava": {
+    "require": [
+      "./test/_setup-browser-env.js"
+    ],
+    "files": [
+      "test/**/*.test.js"
+    ]
+  }
+}

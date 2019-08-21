@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<my-counter test="hello"></my-counter>
+
+<script type="module">
+  import { define, html, css, useState } from "../lib/haunted-niht.mjs"
+
+  function Counter({ test }) {
+    const [count, setCount] = useState(0)
+    return [
+      css`
+        display: inline-flex;
+        flex-flow: column;
+        text-align: center;
+        background: ${count > 10 ? "green" : "red"};
+      `,
+      html`
+        <div id="count">${count}</div>
+        <button type="button" @click=${() => setCount(count + 1)}">Increment</button>
+      `,
+    ]
+  }
+
+  define("my-counter", Counter)
+</script>

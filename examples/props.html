@@ -1,0 +1,43 @@
+<my-parent></my-parent>
+
+<script type="module">
+  import { define, html, css, useState } from "../lib/haunted-niht.mjs"
+
+  function MyParent() {
+    return () => {
+      const [name, setName] = useState("")
+
+      return html`
+        <input type="text" value="${name}" @keyup=${ev => setName(ev.target.value)} />
+        <my-child :name=${name}></my-child>
+      `
+    }
+  }
+
+  define("my-parent", MyParent)
+
+  function MyChild() {
+    return ({ name }) => {
+      return html`
+        <div>${name}</div>
+      `
+    }
+  }
+
+  define("my-child", MyChild)
+
+  function CssOnly() {
+    return ({ name }) => {
+      return [
+        css`
+          background: green;
+        `,
+        html`
+          <button></button>
+        `,
+      ]
+    }
+  }
+
+  define("my-child", MyChild)
+</script>
