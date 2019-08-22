@@ -24,6 +24,7 @@ const { component, createContext } = haunted({
 
 export { html, css, createContext }
 export { useCallback, useEffect, useState, useReducer, useMemo, useContext, useRef, hook, Hook } from "haunted/core"
+export { unsafeHTML } from "lit-html/directives/unsafe-html"
 export { repeat } from "lit-html/directives/repeat"
 export { until } from "lit-html/directives/until"
 export { classMap } from "lit-html/directives/class-map"

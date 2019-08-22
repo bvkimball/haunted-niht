@@ -1,6 +1,6 @@
 {
   "name": "@niht/haunted",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Experimenting with hauntedjs",
   "source": "src/haunted-niht.js",
   "main": "lib/haunted-niht.js",
